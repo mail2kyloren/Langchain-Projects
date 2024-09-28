@@ -16,7 +16,7 @@ st.header("Langchain Application")
 ## Function to load OpenAI model andto get the response.
 
 def get_openai_response(question):
-    llm=OpenAI(openai_api_key=os.getenv("OPEN_API_KEY"),model_name="gpt-3.5-turbo-instruct",temperature=0.5)
+    llm=OpenAI(openai_api_key=os.environ.get("OPEN_API_KEY"),model_name="gpt-3.5-turbo-instruct",temperature=0.5)
     response = llm(question)
     return response 
 
